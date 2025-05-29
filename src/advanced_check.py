@@ -1,12 +1,35 @@
 import pandas as pd
 import numpy as np
 from typing import Dict, List
-from src.data_quality_base import DataQualityCheck 
-from src.constants import EXCHANGE_NAME_COLUMN_NAME, DATE_COLUMN_NAME, VALUE_COLUMN_NAME
+from data_quality_base import DataQualityCheck
+from constants import EXCHANGE_NAME_COLUMN_NAME, DATE_COLUMN_NAME, VALUE_COLUMN_NAME
+
 
 class AdvancedCheck(DataQualityCheck):
+    """
+    Advanced data quality checks for a DataFrame.
+    This class performs checks for:
+    - Outliers using Z-score and IQR methods
+    - High correlation between numeric columns
+    - Rolling outliers in time series data
+    Inherits from DataQualityCheck base class.
+    Inputs:
+    - data: pd.DataFrame to check
+    - zscore_threshold: threshold for Z-score outlier detection (default is 3.0)
+    - correlation_threshold: threshold for high correlation detection (default is 0.8)
+    - std_threshold: threshold for rolling outlier detection (default is 2.0)
+    """
 
-    def __init__(self, data: pd.DataFrame, zscore_threshold: float = 3.0, correlation_threshold: float = 0.8, std_threshold: float = 2.0):
+    def __init__(
+        self,
+        data: pd.DataFrame,
+        zscore_threshold: float = 3.0,
+        correlation_threshold: float = 0.8,
+        std_threshold: float = 2.0,
+    ):
+        """
+        Initializes the AdvancedCheck with a DataFrame and optional parameters for thresholds.
+        """
         self.data = data
         self.zscore_threshold = zscore_threshold
         self.correlation_threshold = correlation_threshold
@@ -14,6 +37,13 @@ class AdvancedCheck(DataQualityCheck):
         self.issues = {}
 
     def run_check(self):
+        """
+        Run the advanced data quality checks on the DataFrame.
+        This method checks for outliers using IQR method,
+        high correlation between numeric columns, and rolling outliers in time series data.
+        Returns:
+            Dict[str, Dict[str, pd.DataFrame]]: A dictionary containing the issues found, with keys for each check type.
+        """
 
         self._check_outliers_iqr()
 
@@ -24,11 +54,18 @@ class AdvancedCheck(DataQualityCheck):
         return self.issues
 
     def _check_outliers_zscore(self) -> Dict[str, Dict[str, List[str]]]:
+        """
+        Check for outliers in numeric columns using Z-score method.
+        This method groups the DataFrame by 'ExchangeName' and calculates Z-scores for each numeric column.
+        If the Z-score exceeds the specified threshold, the row is considered an outlier.
+        """
 
         numeric_cols = self.data.select_dtypes(include=[np.number]).columns
 
         if EXCHANGE_NAME_COLUMN_NAME not in self.data.columns:
-            raise ValueError(f"DataFrame must contain the column '{EXCHANGE_NAME_COLUMN_NAME}' for grouping.")
+            raise ValueError(
+                f"DataFrame must contain the column '{EXCHANGE_NAME_COLUMN_NAME}' for grouping."
+            )
 
         grouped = self.data.groupby("ExchangeName")
 
@@ -47,10 +84,17 @@ class AdvancedCheck(DataQualityCheck):
                 self.issues.setdefault("outlier_check_zscore", {})[col] = all_outliers
 
     def _check_outliers_iqr(self) -> Dict[str, Dict[str, List[str]]]:
+        """
+        Check for outliers in numeric columns using IQR method.
+        This method groups the DataFrame by 'ExchangeName' and calculates the IQR for each numeric column.
+        If a value is below Q1 - 1.5 * IQR or above Q3 + 1.5 * IQR, it is considered an outlier.
+        """
         numeric_cols = self.data.select_dtypes(include=[np.number]).columns
 
         if EXCHANGE_NAME_COLUMN_NAME not in self.data.columns:
-            raise ValueError(f"DataFrame must contain the column '{EXCHANGE_NAME_COLUMN_NAME}' for grouping.")
+            raise ValueError(
+                f"DataFrame must contain the column '{EXCHANGE_NAME_COLUMN_NAME}' for grouping."
+            )
 
         grouped = self.data.groupby("ExchangeName")
 
@@ -70,6 +114,12 @@ class AdvancedCheck(DataQualityCheck):
                 self.issues.setdefault("outlier_check_iqr", {})[col] = all_outliers
 
     def _check_high_correlation(self):
+        """
+        Check for high correlation between numeric columns in the DataFrame.
+        This method calculates the absolute correlation matrix for numeric columns,
+        identifies pairs of columns with correlation above the specified threshold,
+        and stores the pairs in the issues dictionary.
+        """
         numeric_cols = self.data.select_dtypes(include=[np.number]).columns
         numeric_df = self.data[numeric_cols]
         if numeric_df.empty:
@@ -90,20 +140,32 @@ class AdvancedCheck(DataQualityCheck):
             key = "high_correlation"
             self.issues.setdefault("high_correlation", {})[key] = correlated_pairs
         else:
-            self.issues.setdefault("high_correlation", {})["message"] = "No pairs with high correlation found."
+            self.issues.setdefault("high_correlation", {})[
+                "message"
+            ] = "No pairs with high correlation found."
+
     def _check_rolling_outliers(self, window: int = 3):
         """
-        Detect outliers in time series data using rolling mean and std deviation per group.
-        
-        Args:
-            window: Rolling window size (e.g., 3 months).
+        Check for rolling outliers in time series data.
+        This method calculates the rolling mean and standard deviation for each exchange's value column,
+        and identifies outliers based on the specified standard deviation threshold.
         """
-        if DATE_COLUMN_NAME not in self.data.columns or VALUE_COLUMN_NAME not in self.data.columns or EXCHANGE_NAME_COLUMN_NAME not in self.data.columns:
-            raise ValueError(f"DataFrame must contain the columns '{DATE_COLUMN_NAME}', '{VALUE_COLUMN_NAME}', and '{EXCHANGE_NAME_COLUMN_NAME}' for rolling checks.")
+        if (
+            DATE_COLUMN_NAME not in self.data.columns
+            or VALUE_COLUMN_NAME not in self.data.columns
+            or EXCHANGE_NAME_COLUMN_NAME not in self.data.columns
+        ):
+            raise ValueError(
+                f"DataFrame must contain the columns '{DATE_COLUMN_NAME}', '{VALUE_COLUMN_NAME}', and '{EXCHANGE_NAME_COLUMN_NAME}' for rolling checks."
+            )
 
         df_sorted = self.data.sort_values(by=[EXCHANGE_NAME_COLUMN_NAME, DATE_COLUMN_NAME])
-        rolling_mean = df_sorted.groupby(EXCHANGE_NAME_COLUMN_NAME)[VALUE_COLUMN_NAME].transform(lambda x: x.rolling(window=window, min_periods=1).mean())
-        rolling_std = df_sorted.groupby(EXCHANGE_NAME_COLUMN_NAME)[VALUE_COLUMN_NAME].transform(lambda x: x.rolling(window=window, min_periods=1).std())
+        rolling_mean = df_sorted.groupby(EXCHANGE_NAME_COLUMN_NAME)[VALUE_COLUMN_NAME].transform(
+            lambda x: x.rolling(window=window, min_periods=1).mean()
+        )
+        rolling_std = df_sorted.groupby(EXCHANGE_NAME_COLUMN_NAME)[VALUE_COLUMN_NAME].transform(
+            lambda x: x.rolling(window=window, min_periods=1).std()
+        )
 
         deviation = (df_sorted[VALUE_COLUMN_NAME] - rolling_mean).abs()
         outliers_mask = deviation > self.std_threshold * rolling_std
@@ -116,7 +178,7 @@ class AdvancedCheck(DataQualityCheck):
         outlier_rows = df_sorted[outliers_mask]
         if not outlier_rows.empty:
             self.issues.setdefault("rolling_outliers", {})[VALUE_COLUMN_NAME] = outlier_rows
-    
+
     def summarize_issues(self):
         """
         Summarizes the issues found during the checks in a dictionary format.
@@ -139,8 +201,8 @@ class AdvancedCheck(DataQualityCheck):
                     summary[check_name][column]["all"] = {
                         "num_issues": f"{len(df) if hasattr(df, '__len__') else 1} issues found"
                     }
-        return summary 
-    
+        return summary
+
     def save_issues(self, file_path: str) -> None:
         """
         Saves the issues to a specified file path.
@@ -149,7 +211,7 @@ class AdvancedCheck(DataQualityCheck):
         if not summary:
             print("No issues to save.")
             return
-        with open(file_path, 'w') as f:
+        with open(file_path, "w") as f:
             for check_name, column_issues in summary.items():
                 f.write(f"Check: {check_name}\n")
                 for column, issue_info in column_issues.items():

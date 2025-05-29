@@ -1,24 +1,51 @@
-from sklearn.ensemble import IsolationForest
 import pandas as pd
-import numpy as np
+from sklearn.ensemble import IsolationForest
 
-from src.advanced_check import AdvancedCheck
-from src.constants import EXCHANGE_NAME_COLUMN_NAME, VALUE_COLUMN_NAME
+from advanced_check import AdvancedCheck
+from constants import EXCHANGE_NAME_COLUMN_NAME, VALUE_COLUMN_NAME
+
 
 class MachineLearningCheck(AdvancedCheck):
+    """
+    Machine Learning-based data quality checks for a DataFrame.
+    This class performs anomaly detection using Isolation Forest.
+    Inherits from AdvancedCheck class.
+    Inputs:
+    - data: pd.DataFrame to check
+    - contamination: proportion of outliers in the data (default is 0.01)
+    """
+
     def __init__(self, data: pd.DataFrame, contamination: float = 0.01):
+        """
+        Initializes the MachineLearningCheck with a DataFrame and optional contamination parameter.
+        """
         self.data = data
         self.contamination = contamination
         self.issues = {}
 
     def run_check(self):
+        """
+        Run the machine learning-based data quality checks on the DataFrame.
+        This method checks for anomalies using Isolation Forest.
+        Returns:
+            Dict[str, Dict[str, pd.DataFrame]]: A dictionary containing the issues found, with keys for each check type.
+        """
         self._check_anomalies_with_isolation_forest()
+        return self.issues
 
     def _check_anomalies_with_isolation_forest(self):
+        """
+        Check for anomalies in the DataFrame using Isolation Forest.
+        This method groups the DataFrame by 'ExchangeName' and applies Isolation Forest to detect anomalies
+        in the specified value column.
+
+        """
 
         grouped = self.data.groupby(EXCHANGE_NAME_COLUMN_NAME)
         if VALUE_COLUMN_NAME not in self.data.columns:
-            raise ValueError(f"DataFrame must contain the column '{VALUE_COLUMN_NAME}' for anomaly detection.")
+            raise ValueError(
+                f"DataFrame must contain the column '{VALUE_COLUMN_NAME}' for anomaly detection."
+            )
         outlier_rows = []
         for exch, group in grouped:
             clean_series = group[VALUE_COLUMN_NAME].dropna()
