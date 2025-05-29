@@ -1,4 +1,3 @@
-import re
 import pandas as pd
 from typing import Dict
 from .data_quality_base import DataQualityCheck
