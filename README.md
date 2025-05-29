@@ -5,6 +5,7 @@ datasets. This framework helps validate field formats, enforce data standards, a
 before downstream processes.
 
 ## Project Structure
+```text
 ABN-INTERVIEW/
 ├── src/
 │   ├── __init__.py
@@ -29,6 +30,7 @@ ABN-INTERVIEW/
 │   └── test_validation_check.py
 ├── requirements.txt
 ├── README.md
+```
 
 ## Key Features
 - **Data Understanding & Preparation**  
