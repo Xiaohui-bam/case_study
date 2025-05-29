@@ -1,0 +1,6 @@
+Check: mic_format_check
+  Column: MIC
+    Issues: 363950 issues found out of 626630 total rows
+Check: currency_code_format_check
+  Column: currency_code
+    Issues: 205949 issues found out of 626630 total rows

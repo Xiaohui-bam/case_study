@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.ensemble import IsolationForest
 
-from advanced_check import AdvancedCheck
+from .advanced_check import AdvancedCheck
 from constants import EXCHANGE_NAME_COLUMN_NAME, VALUE_COLUMN_NAME
 
 

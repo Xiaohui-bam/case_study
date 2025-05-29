@@ -1,7 +1,7 @@
 import re
 import pandas as pd
 from typing import Dict
-from data_quality_base import DataQualityCheck
+from .data_quality_base import DataQualityCheck
 from constants import MIC_COLUMN_NAME, CURRENCY_CODE_COLUMN_NAME
 
 
@@ -34,7 +34,7 @@ class ValidationCheck(DataQualityCheck):
 
         if MIC_COLUMN_NAME in self.data.columns:
             invalid = self.data[
-                ~self.data[MIC_COLUMN_NAME].astype(str).str.match(r"^[A-Za-z0-9]{4}$", na=False)
+                ~self.data[MIC_COLUMN_NAME].str.match(r"^[A-Za-z0-9]{4}$", na=False)
             ]
             if not invalid.empty:
                 self.issues.setdefault("mic_format_check", {})[MIC_COLUMN_NAME] = invalid

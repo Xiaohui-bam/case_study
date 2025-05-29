@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from typing import Dict, List
-from data_quality_base import DataQualityCheck
+from .data_quality_base import DataQualityCheck
 from constants import EXCHANGE_NAME_COLUMN_NAME, DATE_COLUMN_NAME, VALUE_COLUMN_NAME
 
 

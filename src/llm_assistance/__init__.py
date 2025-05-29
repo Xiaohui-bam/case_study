@@ -1,0 +1,1 @@
+from .llm_insight_generator import GPTInsightGenerator

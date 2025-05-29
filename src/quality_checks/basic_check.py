@@ -1,6 +1,6 @@
 import pandas as pd
 from typing import Dict
-from data_quality_base import DataQualityCheck
+from .data_quality_base import DataQualityCheck
 from constants import (
     NEGATIVE_CHECK_COLUMN_NAMES,
     STRING_LENGTH_CHECK_COLUMN_NAMES,
