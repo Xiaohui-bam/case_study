@@ -1,0 +1,21 @@
+Check: missing_values
+  Column: Value
+    Issues: 390490 issues found out of 626630 total rows
+  Column: YTD
+    Issues: 460192 issues found out of 626630 total rows
+  Column: % Change (YTD)
+    Issues: 626630 issues found out of 626630 total rows
+  Column: % Change (MTM)
+    Issues: 396152 issues found out of 626630 total rows
+  Column: MTM_pct
+    Issues: 99944 issues found out of 626630 total rows
+  Column: % Change (YTY)
+    Issues: 626630 issues found out of 626630 total rows
+  Column: YTY_pct
+    Issues: 243880 issues found out of 626630 total rows
+  Column: MIC
+    Issues: 363950 issues found out of 626630 total rows
+  Column: OPERATING MIC
+    Issues: 363950 issues found out of 626630 total rows
+  Column: currency_code
+    Issues: 205949 issues found out of 626630 total rows

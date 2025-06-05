@@ -1,0 +1,282 @@
+Check: isolation_forest_anomaly
+  Column: Value
+    Exchange: abu dhabi securities exchange
+      Issues: 10 issues found out of 4787 total rows
+    Exchange: amman stock exchange
+      Issues: 28 issues found out of 4977 total rows
+    Exchange: angolan securities exchange (bodiva)
+      Issues: 2 issues found out of 1346 total rows
+    Exchange: armenia securities exchange
+      Issues: 19 issues found out of 4832 total rows
+    Exchange: astana international exchange
+      Issues: 8 issues found out of 5831 total rows
+    Exchange: asx australian securities exchange
+      Issues: 32 issues found out of 6223 total rows
+    Exchange: athens stock exchange
+      Issues: 54 issues found out of 6606 total rows
+    Exchange: b3 - brasil bolsa balcão
+      Issues: 25 issues found out of 6074 total rows
+    Exchange: bahrain bourse
+      Issues: 17 issues found out of 4872 total rows
+    Exchange: baku stock exchange
+      Issues: 18 issues found out of 4541 total rows
+    Exchange: barbados stock exchange
+      Issues: 1 issues found out of 891 total rows
+    Exchange: beirut stock exchange
+      Issues: 11 issues found out of 2882 total rows
+    Exchange: belarusian currency and stock exchange
+      Issues: 12 issues found out of 5878 total rows
+    Exchange: bermuda stock exchange
+      Issues: 5 issues found out of 4649 total rows
+    Exchange: bme spanish exchanges
+      Issues: 46 issues found out of 6509 total rows
+    Exchange: bme spanish exchanges barcelona
+      Issues: 1 issues found out of 3056 total rows
+    Exchange: bme spanish exchanges bilbao
+      Issues: 1 issues found out of 3056 total rows
+    Exchange: bme spanish exchanges madrid
+      Issues: 1 issues found out of 2205 total rows
+    Exchange: bme spanish exchanges valencia
+      Issues: 1 issues found out of 3056 total rows
+    Exchange: boerse stuttgart
+      Issues: 16 issues found out of 4867 total rows
+    Exchange: bolsa de comercio de santiago
+      Issues: 19 issues found out of 6041 total rows
+    Exchange: bolsa de valores de colombia
+      Issues: 26 issues found out of 6108 total rows
+    Exchange: bolsa de valores de lima
+      Issues: 29 issues found out of 5148 total rows
+    Exchange: bolsa electronica de chile
+      Issues: 9 issues found out of 5777 total rows
+    Exchange: bolsa latinoamericana de valores (latinex)
+      Issues: 40 issues found out of 5227 total rows
+    Exchange: bolsa mexicana de valores
+      Issues: 39 issues found out of 6391 total rows
+    Exchange: bolsa nacional de valores
+      Issues: 22 issues found out of 4874 total rows
+    Exchange: bolsa y mercados argentinos
+      Issues: 17 issues found out of 5249 total rows
+    Exchange: borsa istanbul
+      Issues: 39 issues found out of 6326 total rows
+    Exchange: borsa italiana
+      Issues: 2 issues found out of 141 total rows
+    Exchange: botswana stock exchange
+      Issues: 30 issues found out of 5086 total rows
+    Exchange: boursa kuwait
+      Issues: 7 issues found out of 2989 total rows
+    Exchange: bourse de casablanca
+      Issues: 19 issues found out of 4912 total rows
+    Exchange: bourse de montreal
+      Issues: 7 issues found out of 5774 total rows
+    Exchange: brvm
+      Issues: 7 issues found out of 4679 total rows
+    Exchange: bucharest stock exchange
+      Issues: 24 issues found out of 4978 total rows
+    Exchange: budapest stock exchange
+      Issues: 62 issues found out of 6729 total rows
+    Exchange: bulgarian stock exchange
+      Issues: 34 issues found out of 5133 total rows
+    Exchange: bursa malaysia
+      Issues: 39 issues found out of 6246 total rows
+    Exchange: bursa malaysia derivatives
+      Issues: 5 issues found out of 2118 total rows
+    Exchange: canadian securities exchange
+      Issues: 9 issues found out of 3210 total rows
+    Exchange: cayman island stock exchange
+      Issues: 1 issues found out of 894 total rows
+    Exchange: cboe europe
+      Issues: 2 issues found out of 2880 total rows
+    Exchange: cboe futures exchange
+      Issues: 2 issues found out of 2058 total rows
+    Exchange: cboe global markets
+      Issues: 13 issues found out of 3302 total rows
+    Exchange: china financial futures exchange
+      Issues: 4 issues found out of 2100 total rows
+    Exchange: chittagong stock exchange
+      Issues: 8 issues found out of 4652 total rows
+    Exchange: cme group
+      Issues: 12 issues found out of 3934 total rows
+    Exchange: colombo stock exchange
+      Issues: 38 issues found out of 5284 total rows
+    Exchange: cyprus stock exchange
+      Issues: 20 issues found out of 4940 total rows
+    Exchange: dalian commodity exchange
+      Issues: 3 issues found out of 2082 total rows
+    Exchange: dar es salaam stock exchange
+      Issues: 15 issues found out of 5938 total rows
+    Exchange: deutsche boerse ag
+      Issues: 37 issues found out of 6281 total rows
+    Exchange: dhaka stock exchange
+      Issues: 12 issues found out of 4756 total rows
+    Exchange: dubai financial market
+      Issues: 11 issues found out of 4748 total rows
+    Exchange: dubai gold and commodities exchange
+      Issues: 6 issues found out of 2138 total rows
+    Exchange: euronext
+      Issues: 32 issues found out of 6207 total rows
+    Exchange: euronext amsterdam
+      Issues: 2 issues found out of 4185 total rows
+    Exchange: euronext brussels
+      Issues: 2 issues found out of 4185 total rows
+    Exchange: euronext dublin
+      Issues: 2 issues found out of 3084 total rows
+    Exchange: euronext lisbon
+      Issues: 2 issues found out of 4179 total rows
+    Exchange: euronext oslo
+      Issues: 2 issues found out of 4185 total rows
+    Exchange: euronext paris
+      Issues: 2 issues found out of 4185 total rows
+    Exchange: europe - etp market capitalisation
+      Issues: 1 issues found out of 282 total rows
+    Exchange: fmdq group
+      Issues: 7 issues found out of 5763 total rows
+    Exchange: ghana stock exchange
+      Issues: 18 issues found out of 4889 total rows
+    Exchange: hanoi stock exchange
+      Issues: 5 issues found out of 3648 total rows
+    Exchange: hochiminh stock exchange
+      Issues: 32 issues found out of 5102 total rows
+    Exchange: hong kong exchanges and clearing
+      Issues: 42 issues found out of 6382 total rows
+    Exchange: ice futures europe
+      Issues: 10 issues found out of 2190 total rows
+    Exchange: ice futures us
+      Issues: 7 issues found out of 2178 total rows
+    Exchange: india international exchange
+      Issues: 4 issues found out of 4212 total rows
+    Exchange: indonesia stock exchange
+      Issues: 9 issues found out of 4716 total rows
+    Exchange: international securities exchange
+      Issues: 1 issues found out of 2052 total rows
+    Exchange: iran fara bourse securities exchange
+      Issues: 28 issues found out of 6139 total rows
+    Exchange: iran mercantile exchange
+      Issues: 1 issues found out of 559 total rows
+    Exchange: jamaica stock exchange
+      Issues: 16 issues found out of 4784 total rows
+    Exchange: japan exchange group
+      Issues: 36 issues found out of 6287 total rows
+    Exchange: johannesburg stock exchange
+      Issues: 44 issues found out of 6430 total rows
+    Exchange: kazakhstan stock exchange
+      Issues: 15 issues found out of 5952 total rows
+    Exchange: korea exchange
+      Issues: 53 issues found out of 6598 total rows
+    Exchange: ljubljana stock exchange
+      Issues: 22 issues found out of 4934 total rows
+    Exchange: london metal exchange
+      Issues: 3 issues found out of 2082 total rows
+    Exchange: lse group
+      Issues: 3 issues found out of 1088 total rows
+    Exchange: lse group london stock exchange
+      Issues: 29 issues found out of 6206 total rows
+    Exchange: lusaka securities exchange
+      Issues: 13 issues found out of 4784 total rows
+    Exchange: luxembourg stock exchange
+      Issues: 38 issues found out of 5229 total rows
+    Exchange: malta stock exchange
+      Issues: 15 issues found out of 3348 total rows
+    Exchange: matba rofex
+      Issues: 9 issues found out of 2165 total rows
+    Exchange: merj exchange limited
+      Issues: 18 issues found out of 6006 total rows
+    Exchange: metropolitan stock exchange of india
+      Issues: 3 issues found out of 5633 total rows
+    Exchange: miax exchange group
+      Issues: 11 issues found out of 4104 total rows
+    Exchange: moscow exchange
+      Issues: 36 issues found out of 6278 total rows
+    Exchange: multi commodity exchange of india
+      Issues: 3 issues found out of 2082 total rows
+    Exchange: muscat stock exchange
+      Issues: 17 issues found out of 4372 total rows
+    Exchange: nairobi securities exchange
+      Issues: 9 issues found out of 4713 total rows
+    Exchange: namibian stock exchange
+      Issues: 11 issues found out of 4762 total rows
+    Exchange: nasdaq - us
+      Issues: 24 issues found out of 6106 total rows
+    Exchange: nasdaq nordic and baltics
+      Issues: 32 issues found out of 6219 total rows
+    Exchange: nasdaq omx nordic copenhagen
+      Issues: 1 issues found out of 4173 total rows
+    Exchange: nasdaq omx nordic helsinki
+      Issues: 2 issues found out of 4184 total rows
+    Exchange: nasdaq omx nordic iceland
+      Issues: 2 issues found out of 174 total rows
+    Exchange: nasdaq omx nordic stockholm
+      Issues: 2 issues found out of 3075 total rows
+    Exchange: nasdaq omx riga
+      Issues: 1 issues found out of 3057 total rows
+    Exchange: nasdaq omx tallinn
+      Issues: 1 issues found out of 3057 total rows
+    Exchange: nasdaq omx vilnius
+      Issues: 1 issues found out of 3057 total rows
+    Exchange: national equities exchange and quotations
+      Issues: 9 issues found out of 5844 total rows
+    Exchange: national stock exchange of india
+      Issues: 46 issues found out of 6433 total rows
+    Exchange: nigerian exchange
+      Issues: 29 issues found out of 5072 total rows
+    Exchange: nse ix india
+      Issues: 6 issues found out of 5085 total rows
+    Exchange: nyse
+      Issues: 9 issues found out of 5839 total rows
+    Exchange: nzx limited
+      Issues: 45 issues found out of 6482 total rows
+    Exchange: pakistan stock exchange
+      Issues: 10 issues found out of 5868 total rows
+    Exchange: palestine exchange
+      Issues: 21 issues found out of 3161 total rows
+    Exchange: philippine stock exchange
+      Issues: 20 issues found out of 4908 total rows
+    Exchange: prague stock exchange
+      Issues: 23 issues found out of 4968 total rows
+    Exchange: qatar stock exchange
+      Issues: 3 issues found out of 2784 total rows
+    Exchange: rwanda stock exchange
+      Issues: 12 issues found out of 5882 total rows
+    Exchange: saudi exchange (tadawul)
+      Issues: 27 issues found out of 6140 total rows
+    Exchange: shanghai futures exchange
+      Issues: 3 issues found out of 1842 total rows
+    Exchange: shanghai stock exchange
+      Issues: 24 issues found out of 6079 total rows
+    Exchange: shenzhen stock exchange
+      Issues: 41 issues found out of 6399 total rows
+    Exchange: singapore exchange
+      Issues: 13 issues found out of 5904 total rows
+    Exchange: six swiss exchange
+      Issues: 24 issues found out of 4963 total rows
+    Exchange: stock exchange of mauritius
+      Issues: 26 issues found out of 5065 total rows
+    Exchange: taipei exchange
+      Issues: 48 issues found out of 6494 total rows
+    Exchange: taiwan futures exchange
+      Issues: 11 issues found out of 2217 total rows
+    Exchange: taiwan stock exchange
+      Issues: 39 issues found out of 6344 total rows
+    Exchange: tehran stock exchange
+      Issues: 24 issues found out of 6081 total rows
+    Exchange: tel-aviv stock exchange
+      Issues: 31 issues found out of 6177 total rows
+    Exchange: thailand futures exchange
+      Issues: 5 issues found out of 2118 total rows
+    Exchange: the egyptian exchange
+      Issues: 31 issues found out of 5088 total rows
+    Exchange: the saint-petersburg international mercantile exchange
+      Issues: 1 issues found out of 3263 total rows
+    Exchange: the stock exchange of thailand
+      Issues: 31 issues found out of 5087 total rows
+    Exchange: tmx group
+      Issues: 24 issues found out of 4990 total rows
+    Exchange: tunis stock exchange
+      Issues: 16 issues found out of 4801 total rows
+    Exchange: vienna stock exchange
+      Issues: 22 issues found out of 6074 total rows
+    Exchange: warsaw stock exchange
+      Issues: 30 issues found out of 6195 total rows
+    Exchange: zagreb stock exchange
+      Issues: 24 issues found out of 4954 total rows
+    Exchange: zhengzhou commodity exchange
+      Issues: 3 issues found out of 2082 total rows
